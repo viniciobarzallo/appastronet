@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+   
+  <div class="horizontal">
+      <div class="vertical">
+          <img src="../../../assets/astronet.jpg" />   
+      </div>  
+  </div>
+
+  <!--
+  <form [formGroup]="myFormulario" (ngSubmit)="loginUser(loginForm.value)">
+    <ion-item>
+
+      <ion-label>Correo</ion-label>
+      <ion-input formControName="email"></ion-input>
+
+    </ion-item>
+  </form>
+  -->
+
+  <ion-list>
+    <ion-item>
+        <ion-label position="stacked">
+            <ion-icon name="mail-outline" item-start></ion-icon>
+        </ion-label>
+        <ion-input autocomplete="off" placeholder="Correo electrónico" type="email">
+        </ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+        </ion-label>
+        <ion-input autocomplete="off" type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="menu()" share="round">Iniciar Sesión</ion-button>
+  </ion-list>
+
+</ion-content>
+
+

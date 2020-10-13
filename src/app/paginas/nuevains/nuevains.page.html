@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva Instalación</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Fecha de instalación: </ion-label>
+        <ion-datetime display-format="DD MMM, YYYY"  name="fecha"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Cédula:</ion-label>
+        <ion-input type="number" placeholder="0101010101" maxlength="10"></ion-input>
+      </ion-item>
+
+      <!--
+      <input type="text" value="" name="cedula" [(ngModel)]="cedula" (change)="validadorDeCedula(cedula)" maxlength="10">
+      <small *ngIf="!validador" class="text-danger">Cedula Invalida</small>
+      -->
+
+      <ion-item>
+        <ion-label position="stacked">Nombres Completos:</ion-label>
+        <ion-input style="text-transform:uppercase" type="text" placeholder="Apellidos Nombres"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Correo Electrónico:</ion-label>
+        <ion-input type="email" placeholder="Correo electrónico" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Dirección:</ion-label>
+        <ion-input type="text" placeholder="Calle principal" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Calle secundaria" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Referencia" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Teléfonos:</ion-label>
+        <ion-input type="tel" placeholder="Convencional" maxlength="7"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="tel" placeholder="Celular" maxlength="10"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Plan Adquirido:</ion-label>
+          <ion-select interface="popover" >
+            <ion-select-option value="Basico">Básico</ion-select-option>
+            <ion-select-option value="Intermedio">Intermedio</ion-select-option>
+            <ion-select-option value="Alto">Alto</ion-select-option>
+          </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">IP:</ion-label>
+        <ion-input type="text" placeholder="XXX.XXX.XXX.XXX" maxlength="15" ></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Número Contrato:</ion-label>
+        <ion-input type="number" placeholder="Número contrato" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-button position="stacked" class="boton"><ion-icon name="refresh-outline"></ion-icon></ion-button>
+          <ion-label >
+            <p>Latitud: </p> 
+            <p>Longitud: </p>
+          </ion-label>
+      </ion-item>
+
+    </ion-list>
+</ion-content>
+
+<ion-footer class="btn-center-aling">
+  <ion-button class="boton" >Guardar</ion-button>
+  <ion-button class="boton" >Cancelar</ion-button>
+</ion-footer>

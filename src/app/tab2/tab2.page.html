@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Instalaciones
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--routerLink llama al metodo 'datos' para mostar atributos-->
+  <ion-card [routerLink]="['/instalacion',char.id]" *ngFor="let char of datos.results">
+    <ion-card-header>
+      <ion-card-title>{{char.name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content >
+      <ion-item>
+        <ion-label>Calle principal: {{char.status}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Calle secundaria: {{char.species}}</ion-label>
+      </ion-item>
+
+      <!--
+      <ion-item>
+        <ion-label>Tipo: {{char.gender}}</ion-label>        
+      </ion-item>
+      -->
+
+      <!--
+      <ion-item>
+        <ion-img [src]="char.image"></ion-img>
+      </ion-item>
+      -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

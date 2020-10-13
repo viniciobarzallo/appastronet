@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar class="colorToolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Instalación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+      <!--
+      <input type="text" value="" name="cedula" [(ngModel)]="cedula" (change)="validadorDeCedula(cedula)" maxlength="10">
+      <small *ngIf="!validador" class="text-danger">Cedula Invalida</small>
+      -->
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="stacked">Fecha de instalación: </ion-label>
+        <ion-datetime display-format="DD MMM, YYYY"  name="fecha"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Cédula:</ion-label>
+        <ion-input value={{clienteInstalacion.id}} type="text" maxlength="10" placeholder="0101010101" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Nombres Completos:</ion-label>
+        <ion-input value={{clienteInstalacion.name}} type="text" placeholder="Apellidos Nombres" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Correo Electrónico:</ion-label>
+        <ion-input type="text" placeholder="Correo electrónico" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Dirección:</ion-label>
+        <ion-input value={{clienteInstalacion.status}} type="text" placeholder="Calle principal" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Calle secundaria" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Referencia" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Teléfonos:</ion-label>
+        <ion-input type="text" placeholder="Convencional" maxlength="9" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Celular" maxlength="10" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Plan Adquirido:</ion-label>
+          <ion-select disabled interface="popover">
+            <ion-select-option value="ba">Básico</ion-select-option>
+            <ion-select-option value="in">Intermedio</ion-select-option>
+            <ion-select-option value="al">Alto</ion-select-option>
+          </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">IP:</ion-label>
+        <ion-input placeholder="XXX.XXX.XXX.XXX" maxlength="15" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Número de Contrato:</ion-label>
+        <ion-input type="text" placeholder="Número de contrato" maxlength="10" [readonly]='deshabilitarTexto'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Antena:</ion-label>
+          <ion-select [(ngModel)]="antena" interface="popover" >
+            <ion-select-option value="LHG">LHG</ion-select-option>
+            <ion-select-option value="SXT5">SXT5</ion-select-option>
+            <ion-select-option value="NANO M2">NANO M2</ion-select-option>
+            <ion-select-option value="DISC LITE">DISC LITE</ion-select-option>
+          </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Observación: 
+          <p class="ion-text-wrap">tried calling StatusBar.styleDefault, but Cordova is not available. Make sure to include cordova.js or run in a device/simulator</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item >
+        <ion-button (click)="obtenerGeolocalizacion()" position="stacked" class="boton" ><ion-icon name="refresh-outline"></ion-icon></ion-button>
+          <ion-label>
+            <p>Latitud: {{latitud}}</p>
+            <p>Longitud: {{longitud}}</p>
+            
+          </ion-label>
+      </ion-item>
+
+      <ion-toolbar class="centrarBoton">
+          <ion-button (click)="textoEnable()">Actualizar</ion-button>
+          <ion-button (click)="textoDisable()">Guardar</ion-button>
+      </ion-toolbar> 
+      
+    </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-item >
+    <ion-label>Realizado</ion-label>
+    <ion-toggle slot="end" [checked]="estado"></ion-toggle> 
+  </ion-item>
+</ion-footer>
